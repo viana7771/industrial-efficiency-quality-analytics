@@ -174,13 +174,13 @@ Essas limitações serão revisadas após a inspeção dos arquivos reais e da d
 
 Dataset SECOM — UCI Machine Learning Repository:
 
-<https://archive.ics.uci.edu/dataset/179/secom>
+[https://archive.ics.uci.edu/dataset/179/secom](https://archive.ics.uci.edu/dataset/179/secom)
 
 Os arquivos originais somente serão incorporados após a verificação da fonte, do formato e das condições de uso. A documentação da obtenção será mantida junto ao projeto.
 
 ## Status atual
 
-**Fase:** planejamento inicial.
+**Fase:** preparação da base para análise exploratória.
 
 **Concluído:**
 
@@ -190,5 +190,11 @@ Os arquivos originais somente serão incorporados após a verificação da fonte
 - estratégia de versionamento definida;
 - preocupação com tamanho dos arquivos e memória incorporada à metodologia;
 - decisão inicial de não utilizar Docker, dashboard ou Machine Learning.
+- fonte oficial e arquivos brutos do SECOM verificados;
+- estrutura real confirmada em 1.567 observações e 590 features;
+- interpretação do label documentada: `-1` = aprovação e `1` = falha;
+- diagnóstico inicial concluído, incluindo ausências, duplicidades e variabilidade;
+- tratamento inicial implementado em `notebooks/02_tratamento_dos_dados.ipynb`;
+- base preparada com 446 features e nenhum valor ausente após o tratamento.
 
-**Próximo passo:** consultar a fonte oficial e verificar os arquivos do SECOM, começando pelo tamanho e pela estrutura física, sem carregá-los integralmente no Python.
+**Próximo passo:** iniciar a análise exploratória comparando as observações aprovadas e reprovadas, investigando padrões temporais e avaliando as distribuições das features tratadas.
