@@ -197,4 +197,10 @@ Os arquivos originais somente serão incorporados após a verificação da fonte
 - tratamento inicial implementado em `notebooks/02_tratamento_dos_dados.ipynb`;
 - base preparada com 446 features e nenhum valor ausente após o tratamento.
 
-**Próximo passo:** iniciar a análise exploratória comparando as observações aprovadas e reprovadas, investigando padrões temporais e avaliando as distribuições das features tratadas.
+**Próximo passo:** executar a carga reproduzível da seleção no PostgreSQL e conferir se os indicadores SQL correspondem à análise estatística.
+
+### Carga no PostgreSQL
+
+O carregador `scripts/carregar_secom_postgres.py` reproduz o tratamento documentado, carrega as seis features da estrutura SQL e confere a contagem e os indicadores após a carga. Valide os dados sem acessar o banco com `uv run python scripts/carregar_secom_postgres.py --dry-run`.
+
+Para executar a carga, defina `SECOM_DATABASE_URL` com a string de conexão do PostgreSQL e rode `uv run python scripts/carregar_secom_postgres.py`. A carga substitui os registros existentes em `public.secom_tratado` dentro de uma transação. Não versione credenciais.
